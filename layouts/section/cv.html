@@ -1,0 +1,92 @@
+{{- define "main" -}}
+
+
+{{- $cv_data := site.Data.cv -}}
+
+{{/* 头部图片 */}}
+{{$top_image := "images/design/top-image.png"}}
+{{- if .Params.top_image -}}
+{{- $top_image =  .Params.top_image -}}
+{{- end -}}
+<div class="site-header-container has-cover" style="background-image: url({{ $top_image | relURL}});">
+  <div class="scrim has-cover">
+    <div class="site-header">
+      <h1 class="title"></h1>
+      <p class="subtitle"></p>
+    </div>
+  </div>
+</div>
+
+<div class="page-cv container">
+
+
+
+
+  <div class="cv-list-wrap pb-5">
+
+    {{/* .Content */}}
+
+    <div class="page-title pt-5 pb-5">
+
+      <h1 class=" ">CV
+        <a href="{{ "uploads/cv.pdf" | relURL }}"
+           target="_blank"
+           class="float-right ml-5"
+           title="Download CV PDF">
+          <i class="fas fa-file-pdf"></i>
+          <span style="font-size:0.6em; color: #000; font-weight: 300;">CV</span>
+
+        </a>
+
+        <a href="{{ "uploads/resume.pdf" | relURL }}" target="_blank" class="float-right ml-2"
+                title="Download Resume PDF">
+          <i class="fas fa-file-pdf"></i>
+          <span style="font-size:0.6em; color: #000; font-weight: 300;">Resume</span> </a>
+      </h1>
+      <p class="post-description" style="font-size:1em;">
+        Click to view full information <br>  Download resume and CV on the right.
+      </p>
+    </div>
+
+    <div class="cv-contents">
+      {{ range $index, $item := $cv_data }}
+
+      <div class="cv-item card {{$item.type}}">
+        <div class="card-body">
+          <div class="card-title">{{$item.title | markdownify}}</div>
+          <div class="card-text">
+            {{ range $index2, $item2 := $item.contents }}
+            <div class="row">
+              <div class="col-md-3 col-12 map-key">
+                <div class="key-content  ">{{$item2.name | markdownify}}</div>
+              </div>
+              <div class="col-md-9 col-12 map-value">
+                <div class="value-content">{{$item2.value | markdownify}}</div>
+              </div>
+            </div>
+            {{ end}}
+
+          </div>
+        </div>
+
+      </div>
+
+      {{ end }}
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('.cv-list-wrap .cv-item .card-title').click(function() {
+      $(this).parent().toggleClass("open");
+    });
+
+  });
+</script>
+
+
+{{- end -}}

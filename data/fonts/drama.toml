@@ -1,0 +1,16 @@
+# Font style metadata
+name = "Drama"
+
+# Optional Google font URL
+#google_fonts = "family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
+
+# Font families
+heading_font = "Segoe UI"
+body_font =   "Segoe UI"
+nav_font =   "Segoe UI"
+mono_font =  "Segoe UI"
+
+#heading_font = "\"Segoe UI\", Tahoma, Geneva, Verdana"
+#body_font =   "\"Segoe UI\", Tahoma, Geneva, Verdana"
+#nav_font =   "\"Segoe UI\", Tahoma, Geneva, Verdana"
+#mono_font =  "\"Segoe UI\", Tahoma, Geneva, Verdana"

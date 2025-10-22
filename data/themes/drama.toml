@@ -1,0 +1,16 @@
+# Theme metadata
+name = "Drama"
+
+[light]
+  # Primary
+  primary = "#2c3e50"
+
+  # Menu
+  menu_primary = "#2c3e50"
+  menu_text = "#fff"
+  menu_text_active = "#e74c3c"
+  menu_title = "#fff"
+
+  # Home sections
+  home_section_odd = ""
+  home_section_even = ""

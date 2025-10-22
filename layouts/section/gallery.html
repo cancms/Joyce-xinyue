@@ -1,0 +1,80 @@
+{{- define "main" -}}
+
+  {{ $st := . }}
+
+
+  {{- $gallery_images := .Params.gallery_images -}}
+
+
+
+  {{/* 头部图片 */}}
+  {{$top_image := "images/design/top-image.png"}}
+  {{- if .Params.top_image -}}
+  {{- $top_image =  .Params.top_image -}}
+  {{- end -}}
+  <div class="site-header-container  has-cover" style="background-image: url({{ $top_image | relURL}});">
+    <div class="scrim has-cover">
+      <div class="site-header">
+        <h1 class="title"></h1>
+        <p class="subtitle"></p>
+      </div>
+    </div>
+  </div>
+
+
+
+{{/* https://github.com/biati-digital/glightbox */}}
+{{/* https://biati-digital.github.io/glightbox/ */}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+
+
+
+  <div class="universal-wrapper page-gallery container">
+
+      <div class="pt-3 pb-3 pub-title">
+          <h1>{{ .Title }}</h1>
+      </div>
+
+
+      <div class="gallery-list-wrap pb-5">
+
+        <div>{{ .Content }}</div>
+
+        <div class="row  ">
+
+        {{ range  $index, $item := $gallery_images }}
+
+          <div class="col-12 col-md-4 gallery-img">
+
+            <div class="gallery-item "   >
+
+              <a   href="{{ $item.path |  relURL }}" class="glightbox">
+                <img src="{{ $item.path | relURL }}"  />
+              </a>
+              {{ with $item.name }}
+              <div class="img-desc">{{ . | markdownify }}</div>
+              {{ end }}
+
+            </div>
+
+          </div>
+
+        {{ end }}
+        </div>
+      </div>
+
+  </div>
+
+
+<script type="text/javascript">
+  // 默认选择器为：  .glightbox
+  const options = {
+    zoomable: false
+  };
+  const lightbox = GLightbox({ ...options });
+</script>
+
+
+{{- end -}}

@@ -1,0 +1,42 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+
+main:
+  - name: About
+    url: ''
+    weight: 10
+
+  - name: Posters
+    url: 'posters'
+    weight: 30
+
+
+  - name: Plays
+    url: 'plays'
+    weight: 50
+
+
+  - name: Scripts
+    url: 'scripts'
+    weight: 90
+
+
+  - name: Props
+    url: 'props'
+    weight: 110
+
+
+  - name: Leaders
+    url: 'leaders'
+    weight: 130
+
+
+
+# Link to a PDF of your resume/CV from the menu.
+# To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
+#  - name: Curriculum Vitae
+#    url: uploads/leonelli_mauro.pdf
+#    weight: 50
