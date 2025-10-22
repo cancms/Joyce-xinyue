@@ -24,11 +24,11 @@ email_text:
 links:
 
   - name: "linkedin"
-    url: "https://www.linkedin.com/in/yujia-wan-bba75b306/"  
+    url: "https://www.linkedin.com/in/"  
     icon: "fab fa-linkedin"
 
   - name: "email"
-    url: "mailto: jasminewan@berkeley.edu"  
+    url: "mailto:  "  
     icon: "fa-solid fa-envelope"
   
 #  - name: "orcid"
@@ -39,9 +39,9 @@ links:
 #    url: "https://scholar.google.com/citations?user=xxx&hl=en"  
 #    icon: "fas fa-graduation-cap"  
 
-  - name: "github"
-    url: "https://github.com/YujiaJasmineWan"  
-    icon: "fa-brands fa-github"
+#  - name: "github"
+#    url: "https://github.com/xx"  
+#    icon: "fa-brands fa-github"
 
   
 ---

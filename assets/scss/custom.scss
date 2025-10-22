@@ -58,7 +58,13 @@ body {
 }
 
 
-
+.common-page-title{
+  h1 {
+    font-weight: bold;
+    color: $text-primary-color;
+    font-size: 2.5rem;
+  }
+}
 .page-title {
 
 }
@@ -266,7 +272,13 @@ body {
 
 
 }
-
+.page-plays {
+  .play-items {
+    .article-date {
+      display: none;
+    }
+  }
+}
 
 
 

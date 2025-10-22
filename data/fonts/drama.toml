@@ -2,7 +2,7 @@
 name = "Drama"
 
 # Optional Google font URL
-#google_fonts = "family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
+# google_fonts = ""
 
 # Font families
 heading_font = "Segoe UI"
