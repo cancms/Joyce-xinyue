@@ -1,0 +1,58 @@
+{{- define "main" -}}
+
+<div class=" page-posters page-leaders">
+    {{/* 头部图片 */}}
+    {{$top_image := "images/design/top-image.png"}}
+    {{- if .Params.top_image -}}
+        {{- $top_image =  .Params.top_image -}}
+    {{- end -}}
+  <section class="hero"  style="background-image: url({{ $top_image | relURL}});">
+    <div class="hero-content">
+      <h1>{{ .Params.hero_title | markdownify  | emojify }}</h1>
+      <p>{{ .Params.hero_desc | markdownify  | emojify }}</p>
+    </div>
+  </section>
+
+
+
+ <section  class="section">
+
+
+
+    <div class="container">
+
+      <div class="pt-5 pb-5 common-page-title">
+        <h1>{{ .Title }}</h1>
+      </div>
+      <div>{{.Content}}</div>
+
+      <div class="row gallery-list-wrap">
+          {{ range  $index, $item := .Params.leaders_images }}
+          <div class="col-12 col-md-4 img-gap">
+            <div class="gallery-item"  >
+              <a   href="{{ $item.path |  relURL }}" class="glightbox">
+                <img src="{{ $item.path | relURL }}"  />
+              </a>
+                {{ with $item.name }}
+                  <div class="img-desc">{{ . | markdownify }}</div>
+                {{ end }}
+            </div>
+          </div>
+          {{ end }}
+      </div>
+
+
+
+
+
+
+    </div>
+  </section>
+
+
+</div>
+
+
+
+
+{{- end -}}

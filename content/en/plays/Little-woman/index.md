@@ -38,7 +38,7 @@ play_contents:
 
 
   - images: 
-      - path: "images/plays/p3.3.png"
+      - path: "images/plays/p3.3.jpg"
         name: ""
       - path: "images/plays/p3.4.jpg"
         name: ""

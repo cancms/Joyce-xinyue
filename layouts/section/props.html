@@ -1,0 +1,65 @@
+{{- define "main" -}}
+
+<div class=" page-posters">
+    {{/* 头部图片 */}}
+    {{$top_image := "images/design/top-image.png"}}
+    {{- if .Params.top_image -}}
+        {{- $top_image =  .Params.top_image -}}
+    {{- end -}}
+  <section class="hero"  style="background-image: url({{ $top_image | relURL}});">
+    <div class="hero-content">
+      <h1>{{ .Params.hero_title | markdownify  | emojify }}</h1>
+      <p>{{ .Params.hero_desc | markdownify  | emojify }}</p>
+    </div>
+  </section>
+
+
+
+ <section  class="section">
+    <div class="container">
+
+        {{ range  $index, $item := .Params.props_content }}
+
+          <div class="section-title">
+            <h2>{{ $item.title | markdownify | emojify  }}</h2>
+            <p>{{ $item.desc | markdownify | emojify  }}</p>
+          </div>
+
+
+          <div class="row  gallery-list-wrap ">
+
+              {{ range  $index2, $item2 := $item.gallery_images }}
+
+                <div class="col-12 col-md-4 gallery-img">
+
+                  <div class="gallery-item "   >
+
+                    <a   href="{{ $item2.path |  relURL }}" class="glightbox">
+                      <img src="{{ $item2.path | relURL }}"  />
+                    </a>
+                      {{ with $item2.name }}
+                        <div class="img-desc">{{ . | markdownify }}</div>
+                      {{ end }}
+
+                  </div>
+
+                </div>
+
+              {{ end }}
+          </div>
+
+        {{ end }}
+
+
+
+
+    </div>
+  </section>
+
+
+</div>
+
+
+
+
+{{- end -}}

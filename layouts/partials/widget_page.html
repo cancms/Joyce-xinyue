@@ -32,38 +32,54 @@
   </div>
 </section>
 
-<section id="plays" class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Plays</h2>
-      <p>Discover our past and upcoming productions</p>
+
+
+
+
+    {{- $items_type := "plays" -}}
+    {{- $items_count := .Params.show_plays | default 65535 -}}
+
+
+    {{/* Query */}}
+    {{- $query := where site.RegularPages "Type" $items_type -}}
+
+    {{- $count := len $query -}}
+
+    {{/* Sort */}}
+    {{/* $sort_by := "weight" */}}
+    {{ $query = sort $query ".Params.weight" "asc" }}
+
+    {{/* Limit */}}
+    {{ $query = first $items_count $query }}
+
+  <section id="plays" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Plays</h2>
+        <p>Discover our past and upcoming productions</p>
+      </div>
+      <div class="plays-grid">
+
+
+        {{ range  $index, $item := $query }}
+
+         {{- $image := ($item.Resources.ByType "image").GetMatch "*featured*" -}}
+        <div class="play-card">
+          <div class="play-img"
+               style="background-image: url('{{$image.RelPermalink}}');">
+          </div>
+          <div class="play-content">
+            <h3>{{$item.Title | markdownify  | emojify}}</h3>
+            <p>{{$item.Params.summary | markdownify  | emojify}}</p>
+            <a href="{{$item.RelPermalink}}" class="btn">Learn More</a>
+          </div>
+        </div>
+          {{ end }}
+
+
+      </div>
     </div>
-    <div class="plays-grid">
-      <div class="play-card">
-        <div class="play-img" style="background-image: url('https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');"></div>
-        <div class="play-content">
-          <h3>Little Shop Of Horrors</h3>
-          <p>How we organized a 1.5 hour play</p>
-          <a href="#" class="btn">Learn More</a>
-        </div>
-      </div>
-      <div class="play-card">
-        <div class="play-img" style="background-image: url('https://images.unsplash.com/photo-1507924538820-ede94a04019d?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');"></div>
-        <div class="play-content">
-          <h3>The Great Gatsby</h3>
-          <p>How we organized a 1.5 hour play</p>
-          <a href="#" class="btn">Learn More</a>
-        </div>
-      </div>
-      <div class="play-card">
-        <div class="play-img" style="background-image: url('https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');"></div>
-        <div class="play-content">
-          <h3>Little Women</h3>
-          <p>How we organized a 30 minute play</p>
-          <a href="#" class="btn">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+
+
 </div>
