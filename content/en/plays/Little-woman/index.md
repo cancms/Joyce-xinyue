@@ -1,12 +1,12 @@
 ---
-title: "The Great Gatsby"
-summary: "How I organize a 1.5 hour play"
+title: "Little woman"
+summary: "How I organize a 30 min play"
 #date: 2023-08-05 
 featured: true
 # 详情页面的 社交按钮图标 不展示 
 share: false
 
-weight: 20
+weight: 30
 
 design:
   # Choose a view for the listings:
@@ -22,51 +22,46 @@ design:
 
 play_contents:
   - images:
-      - path: "images/plays/p2.1.jpg"
+      - path: "images/plays/p3.1.jpg"
         name: ""
-      - path: "images/plays/p2.2.jpg"
+      - path: "images/plays/p3.2.jpg"
         name: ""
-      - path: "images/plays/p2.3.png"
-        name: ""
-        
     content: | 
-      ### The Great Gatsby 
+      ### Little woman
       
-      2024-2025 S2
+      2023-2024 S1
       
       - Step 1: making props
-      - Paint two cars used on the stage out of paper board
-      - Repaint the Little shop of horrors wall
+      - Created stage scenery and props, including books and tablecloths.
+      - Edit scripts
+      
+
 
   - images: 
-      - path: "images/plays/p2.3.png"
+      - path: "images/plays/p3.3.png"
         name: ""
-      - path: "images/plays/p2.4.jpg"
+      - path: "images/plays/p3.4.jpg"
         name: ""
-      - path: "images/plays/p2.5.jpg"
-        name: ""
-      - path: "images/plays/p2.6.jpg"
-        name: ""
-
-        
     content: |
-      ### The Great Gatsby 
+      ### Little woman
 
-      2024-2025 S2
+      2023-2024 S1
       
       - Step 2: Separate departments 
-      - Train vocal actresses
-      - Coordinated choreography, staging, dancing, and actor movement 
+      - Coordinated choreography, staging, and actor movement 
       - Performe on stage
 
+
+
+
   - images: 
-      - path: "images/plays/p2.7.jpg"
+      - path: "images/plays/p3.5.jpg"
         name: ""
         
     content: |
-      ### The Great Gatsby 
+      ### Little woman
 
-      2024-2025 S2
+      2023-2024 S1
       
       - Success!!!
 
