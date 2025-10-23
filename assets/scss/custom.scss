@@ -237,6 +237,29 @@ body {
 
 
 
+.gallery-list-wrap {
+  .gallery-item {
+    margin: 1.5rem 0 ;
+    background: #ffffff center;
+
+    a {display: block;}
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      user-select: none;
+      vertical-align: middle;
+      transition: 0.3s;
+      position: relative;
+    }
+    .img-desc {
+      color: #333333;
+      padding: 0.5rem;
+      min-height: 5rem;
+    }
+  }
+}
 
 .page-posters {
   .section-title {
@@ -246,30 +269,6 @@ body {
       display: none;
     }
   }
-  .gallery-list-wrap {
-    .gallery-item {
-      margin: 1.5rem 0 ;
-      background: #ffffff center;
-
-      a {display: block;}
-
-      img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        user-select: none;
-        vertical-align: middle;
-        transition: 0.3s;
-        position: relative;
-      }
-      .img-desc {
-        color: #333333;
-        padding: 0.5rem;
-        min-height: 5rem;
-      }
-    }
-  }
-
 
 }
 .page-plays {
@@ -278,8 +277,29 @@ body {
       display: none;
     }
   }
+
 }
 
+.page-play-single {
+  .play-item {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid lightgray;
+  }
+
+  .play-item-images {
+    width: 20rem;
+    height: 20rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 1px 1px 4px #444;
+    }
+  }
+
+}
 
 
 // 手机

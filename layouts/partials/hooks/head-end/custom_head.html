@@ -6,5 +6,27 @@ type="text/css"
 />
 */}}
 
-{{/**/}}
+{{/*glightbox 点击放大图片*/}}
 
+{{/* https://github.com/biati-digital/glightbox */}}
+{{/* https://biati-digital.github.io/glightbox/ */}}
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://fastly.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+  // 默认选择器为：  .glightbox
+  function gLightboxInit() {
+    const options = {
+      zoomable: false
+    };
+    const lightbox = GLightbox({ ...options });
+    return lightbox;
+  }
+
+  // On page loaded finish
+  document.addEventListener('DOMContentLoaded', gLightboxInit);
+
+</script>
